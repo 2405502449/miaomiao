@@ -1,0 +1,26 @@
+{
+    "msg" : "ok",
+    "status" : 0,
+    "data" : {
+        "movies" : {
+            "list" : [
+                {
+                "cat": "剧情，犯罪",
+                "dir": "小小之",
+                "dur": 108,
+                "enm": "nuhuo",
+                "fra": "美国",
+                "rt": "2018-11-16",
+                "globalReleased": true,
+                "id": 121215,
+                "img": "https://p1.meituan.net/moviemachine/51b193283628a62b85ba31ddc818ffde1560410.jpg",
+                "nm" :"怒火·重案"
+                }
+                ]
+            
+        }
+            
+
+        
+    }
+}
