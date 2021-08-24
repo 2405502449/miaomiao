@@ -1,0 +1,85 @@
+{
+    "msg" : "ok",
+    "status" : 0,
+    "data" : {
+        "cities" : [
+            {
+                "id":1,
+                "nm" :"北京",
+                "isHot" :1,
+                "py":"beijing"
+            },
+            {
+                "id":10,
+                "nm" :"上海",
+                "isHot" :1,
+                "py":"shanghai"
+            },
+            {
+                "id":2,
+                "nm" :"天津",
+                "isHot" :0,
+                "py":"tianjing"
+            },
+            {
+                "id":3,
+                "nm" :"河北",
+                "isHot" :0,
+                "py":"hebei"
+            },
+            {
+                "id":4,
+                "nm" :"山西",
+                "isHot" :0,
+                "py":"shanxi"
+            },
+            {
+                "id":5,
+                "nm" :"内蒙古",
+                "isHot" :0,
+                "py":"neimenggu"
+            },
+            {
+                "id":6,
+                "nm" :"辽宁",
+                "isHot" :1,
+                "py":"liaoning"
+            },
+            {
+                "id":7,
+                "nm" :"吉林",
+                "isHot" :1,
+                "py":"jilin"
+            },
+            {
+                "id":8,
+                "nm" :"黑龙江",
+                "isHot" :1,
+                "py":"heilongjiang"
+            },
+            {
+                "id":9,
+                "nm" :"江苏",
+                "isHot" :1,
+                "py":"jiangsu"
+            },
+            {
+                "id":11,
+                "nm" :"浙江",
+                "isHot" :1,
+                "py":"zhejiang"
+            },
+            {
+                "id":12,
+                "nm" :"重庆",
+                "isHot" :1,
+                "py":"chongqing"
+            }
+
+
+
+            
+            
+        ]
+    }
+}
