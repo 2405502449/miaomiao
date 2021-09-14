@@ -1,5 +1,7 @@
 <template>
     <div class="cinema_body">
+        <Loading v-if="isLoading"/>
+        <Scroller v-else>
         <ul>
             <!-- <li>
                 <div>
@@ -30,6 +32,7 @@
             </li>
             
         </ul>
+        </Scroller>
 	</div>
 </template>
 
@@ -38,7 +41,8 @@ export default {
     name : 'CiList',
     data(){
         return {
-            cinemaList :[]
+            cinemaList :[],
+            isLoading:true
 
         };
     },
@@ -47,6 +51,7 @@ export default {
             console.log(res)
             var msg = res.statusText;
             if(msg === 'OK'){
+                this.isLoading = false;
                 this.cinemaList = res.data.cinemas;
             }
         });
