@@ -42,17 +42,23 @@ export default {
     data(){
         return {
             cinemaList :[],
-            isLoading:true
+            isLoading:true,
+            prevCityId : -1
 
         };
     },
-    mounted(){
+    activated(){
+        var cityId = this.$store.state.city.id;
+        if(this.prevCityId === cityId){return;}
+        this.isLoading = true;
+
         this.axios.get('/ajax/cinemaList').then((res)=>{
             console.log(res)
             var msg = res.statusText;
             if(msg === 'OK'){
                 this.isLoading = false;
                 this.cinemaList = res.data.cinemas;
+                this.prevCityId = cityId;
             }
         });
     },

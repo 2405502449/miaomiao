@@ -19,6 +19,7 @@
                 </keep-alive>
             </div>
         <TabBar />
+        <router-view name="detail" />
     </div>
 </template>
 
@@ -26,13 +27,44 @@
 
 import Header from '@/components/Header'
 import TabBar from '@/components/TabBar'
+import { messageBox }from '@/components/JS'
 
 
 export default {
     name : 'Movie',
     components : {
         Header,
-        TabBar
+        TabBar,
+    },
+    mounted(){
+        setTimeout(()=>{
+            this.axios.get('/getLocation.json').then((res)=>{
+                console.log(res.data.data.id)
+            var msg = res.data.msg;
+            if(msg === "ok"){
+                var nm = res.data.data.nm;
+                var id = res.data.data.id;
+                console.log(nm,id)
+                if(this.$store.state.city.id === id){return;}
+                messageBox({
+                    title:'定位',
+                    content:nm,
+                    ok:'切换定位',
+                    cancel:'取消',
+                    handleOk(){
+                        window.localStorage.setItem('nowNm',nm);
+                        window.localStorage.setItem('nowId',id);
+                        window.location.reload();
+                    },
+                    handleCancel(){
+
+                    }
+                });
+            }
+            
+        });
+        },3000)
+        
     }
 }
 </script>

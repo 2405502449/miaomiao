@@ -18,9 +18,9 @@
             </li> -->
             <li class="pullDown">{{pullDownMsg}}</li>
             <li v-for ="item in movieList" :key="item.id" >
-                <div class="pic_show" @click="handleToDetail"><img :src="item.img | setWH('128.180')"></div>
+                <div class="pic_show" @click="handleToDetail(item.id)"><img :src="item.img | setWH('128.180')"></div>
                 <div class="info_list">
-                    <h2>{{item.nm}} <img v-if="item.version" src="@/assets/3D.png" alt=""></h2>
+                    <h2 @click="handleToDetail(item.id)">{{item.nm}} <img v-if="item.version" src="@/assets/3D.png" alt=""></h2>
                     <p>观众评 <span class="grade">{{item.sc}}</span></p>
                     <p>主演: {{item.star}}</p>
                     <p>{{item.showInfo}}</p>
@@ -54,8 +54,9 @@ export default {
         var cityId = this.$store.state.city.id;
         if(this.prevCityId === cityId){return;}
         this.isLoading = true;
-        //  this.axios.get('/ajax/movieOnInfoList?cityId'+cityId).then((res)=>{
-        this.axios.get('/ajax/movieOnInfoList?cityId=10').then((res)=>{
+        console.log(123)
+         this.axios.get('/ajax/movieOnInfoList?cityId='+cityId).then((res)=>{
+        // this.axios.get('/ajax/movieOnInfoList?cityId=10').then((res)=>{
             var msg = res.statusText;
             if(msg==='OK'){
                 this.movieList = res.data.movieList;
@@ -96,8 +97,9 @@ export default {
         });
     },
     methods : {
-        handleToDetail(){
-            console.log(handleToDetail);
+        handleToDetail(movieId){
+            // console.log(movieId);
+            this.$router.push('/movie/detail/1/'+movieId)
         },
         handleToScroll(pos){
              if(pos.y > 30){

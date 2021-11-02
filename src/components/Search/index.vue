@@ -49,8 +49,9 @@ export default {
         }
     },
     watch : {
-        message(newVal){    
+        message(newVal){   
             var that = this;
+            var cityId = this.$store.state.city.id;
             this.cancelRequest();
             // this.axios.get('/searchData.json',{
             this.axios.get('/parameter/query'
@@ -67,7 +68,7 @@ export default {
                     // this.moviesList = res.data.data.movies.list;
                      for (let i in movies) {
                         movies[i].forEach((value) => {
-                                if (value.enm.indexOf(newVal) > -1 && newVal != "") {
+                                if (value.nm.indexOf(newVal) > -1 && newVal != "") {
                                 this.moviesList.push(value);
                             }
                         })
